@@ -1,5 +1,5 @@
 # Student-Search-App
-Restful Web Application for "Student Search App"using Python and Django.
+Restful Web Application for "Student Search App" using Python and Django.
 
 #Steps to Run this Project:
 >Open Python Shell. 
