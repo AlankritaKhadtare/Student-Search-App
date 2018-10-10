@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+
+<h2> SEARCH STUDENT'S INFORMATION </h2>
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <div>
+            <input type="text" name="Roll" class="form-control" placeholder="Enter Roll No">
+            <br>
+            <br>
+            <input type="text" name="Name" class="form-control" placeholder="Enter Name">
+            <br>
+            <br>
+            <input type="text" name="Age" class="form-control" placeholder="Enter Age">
+            <br>
+            <br>
+            <input type="text" name="Class" class="form-control" placeholder="Enter Class (FE/SE)">
+            <br>
+            <br>
+            <input type="text" name="Mail" class="form-control" placeholder="Enter E-Mail ID">
+            <br>
+            <br>
+            <input type="text" name="Address" class="form-control" placeholder="Enter Address">
+            <br>
+            <br>
+        </div>
+    
+        <label>
+            <button type="submit"> Search </button>
+        </label>
+    </div>
+</form>
+<br>
+<br>
+
+<div>
+    {% if messages %}
+        <ul class="messages">
+            {% for k in messages %}
+            <li> {{k}} </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>
+<br>
+<div>
+    {% if sr %}
+        {% for k in sr %}
+        <table border="0px">
+            <tr>
+                <td> Roll No:- </td>
+                <td> {{k.st_roll}}</td>
+            </tr>
+            <tr>
+                <td> Name:- </td>
+                <td> {{k.st_name}}</td>
+            </tr>
+            <tr>
+                <td> Age:- </td>
+                <td> {{k.st_age}}</td>
+            </tr>
+            <tr>
+                <td> Class:- </td>
+                <td> {{k.st_class}}</td>
+            </tr>
+            <tr>
+                <td> Email ID:- </td>
+                <td> {{k.st_mail}}</td>
+            </tr>
+            <tr>
+                <td> Address:- </td>
+                <td> {{k.st_address}}</td>
+            </tr>
+        </table>
+        <hr>
+        {% endfor %}
+    {% endif %}
+</div>
+{% endblock contents%}

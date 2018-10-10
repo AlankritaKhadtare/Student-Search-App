@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<h2> ADD STUDENT </h2>
+
+<form method="POST">
+    {% csrf_token %}
+    <table>
+        {{user_form.as_table}}
+    </table>
+    <br>
+    <br>
+    <button type="submit"> Add Student </button>
+</form>
+
+{% endblock contents %}
